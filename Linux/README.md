@@ -44,7 +44,7 @@ You want to find all files in the `/home/research/` directory that were modified
 
 
 ## Question 10
-You are tasked with copying the contents of /var/www/html/ from a local machine to a remote server at backup.example.com:/var/backups/html/. How would you ensure that all permissions, timestamps, and symbolic links are preserved, and verify the integrity of the files after copying?
+You are tasked with copying the contents of `/var/www/html/` from a local machine to a remote server at `backup.example.com:/var/backups/html/`. How would you ensure that all permissions, timestamps, and symbolic links are preserved, and verify the integrity of the files after copying?
 
 
 ## Question 11
@@ -55,7 +55,7 @@ A user reports that they cannot connect to the server via SSH. You shared this i
 
 
 ## Question 12
-A colleague requests help becayse they can't clone a repository from GitHub.
+A colleague requests help because they can't clone a repository from GitHub.
 
 - How would you check if GitHub is reachable over the network?
 - How would you verify that port 443 (used for HTTPS) is open for connections to `github.com`?
@@ -76,5 +76,5 @@ Command 'yum' not found
 A colleague has installed a custom version of Python in `/opt/python3.9/bin`, but when they type `python3` in the terminal, it still uses the system's default version located in `/usr/bin/python3`.
 
 - Why is this happening?
-- How would you modify the environment to make /opt/python3.9/bin/python3 the default python3 executable?
+- How would you modify the environment to make `/opt/python3.9/bin/python3` the default python3 executable?
 - How can you verify which version of python3 is being used after the change?

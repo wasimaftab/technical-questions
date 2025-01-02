@@ -81,4 +81,4 @@ Essentially, you are to a create the following `data.table`:
 4:      B    40            70
 ```
 
-How can you achieve with as little code as possible?
+How can you achieve this with as little code as possible?
