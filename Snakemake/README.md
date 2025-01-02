@@ -106,6 +106,18 @@ How would you change the workflow so that it can run, regardless of the `input.c
 
 
 ## Question 5
+
+A colleague is running a Snakemake workflow on an HPC system with SLURM as the job scheduler. Currently, they are executing the workflow as a single monolithic job with the following command:
+
+```bash
+snakemake --cores 16 --snakefile workflow/Snakefile
+```
+However, the workflow contains rules with varying computational requirements—some requiring high memory or multiple cores, and others requiring minimal resources. The current approach is leading to inefficient resource usage and frequent job failures when rules exceed the available memory.
+
+Propose an alternative solution to better manage the execution of this workflow on the SLURM cluster. How would you configure the workflow to ensure that each rule's resource requirements are met?
+
+
+## Question 6
 Point out as many issues as you can in the below rule.
 
 ```python
@@ -129,3 +141,39 @@ rule create_base_config:
         with open('config-base.yaml', 'w') as f:
             f.write(modified_content)
 ```
+
+
+## Question 7
+A workflow needs to generate publication-ready plots for multiple datasets using R. The datasets are provided as CSV files, and the desired output is a PDF file for each dataset, showing a scatter plot of two specified columns.
+
+The team initially implemented the plotting with this rule:
+
+```python
+rule generate_plots:
+    input:
+        "data/{sample}.csv"
+    output:
+        "plots/{sample}.pdf"
+    shell:
+        "Rscript -e 'data <- read.csv(\"{input}\"); pdf(\"{output}\"); plot(data$x, data$y, main = \"Scatter Plot\"); dev.off()'"
+```
+This works but is difficult to modify when additional plotting parameters or complex preprocessing steps are required. Furthermore, debugging errors in this setup has been a challenge.
+
+Propose an improved solution for implementing this workflow while ensuring it remains flexible for future modifications.
+
+
+## Question 8
+A colleague is running a Snakemake workflow on a cluster using the latest version of Snakemake and the SLURM scheduler. They have successfully used the following command in the past to execute their workflow:
+
+```bash
+snakemake --jobs 10 --cluster "sbatch --time=01:00:00 --mem=4G"
+```
+However, when attempting to run the same command recently, they encounter the following error:
+
+```less
+snakemake: error: ambiguous option: --cluster could match --cluster-generic-submit-cmd, --cluster-generic-status-cmd, --cluster-generic-cancel-cmd, --cluster-generic-cancel-nargs, --cluster-generic-sidecar-cmd
+```
+The colleague is puzzled because nothing about the cluster setup or the workflow has changed, and they do not understand why the command no longer works.
+
+- What are the possible reasons for this error?
+- How would you troubleshoot and resolve the issue?
