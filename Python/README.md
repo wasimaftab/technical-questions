@@ -172,3 +172,93 @@ print(f"The average is: {result}")
 1. How would you explain to your colleague what these annotations are?
 2. In this specific context, describe what these annotations mean
 
+
+## Question 12
+A colleague is working on a Python class to manage genomic variants for different projects in a research institute. They write a class that keeps track of a list of variants for each project. However, when they create separate instances of the class for different projects, the variants from one project appear in another project’s list, which is not the expected behavior. The colleague comes to you for help.
+```python
+class VariantManager:
+    def __init__(self, variants=[]):
+        self.variants = variants
+
+    def add_variant(self, variant):
+        self.variants.append(variant)
+
+# Manager for Project A
+manager_a = VariantManager()
+manager_a.add_variant({"id": "rs123", "position": 100, "gene": "Gene1"})
+
+# Manager for Project B
+manager_b = VariantManager()
+manager_b.add_variant({"id": "rs456", "position": 200, "gene": "Gene2"})
+
+# Print variants for each project
+print("Project A variants:", manager_a.variants)
+print("Project B variants:", manager_b.variants)
+```
+Output:
+>```python
+>Project A variants: [{'id': 'rs123', 'position': 100, 'gene': 'Gene1'}, {'id': 'rs456', 'position': 200, 'gene': 'Gene2'}]
+>Project B variants: [{'id': 'rs123', 'position': 100, 'gene': 'Gene1'}, {'id': 'rs456', 'position': 200, 'gene': 'Gene2'}]
+>```
+
+- Why are the variants for `manager_a` and `manager_b` shared across both projects?
+- How would you advise your colleague to fix the issue?
+
+
+## Question 13
+You received a JSON file from a colleague that contains all the variants you need to analyse in a 2Kbp window (1Kbp up and downstream of the variant).  
+The JSON file only contains the position of the variant, and so you need to compute the 2Kbp window yourself for all variants. So you write the following code and run it:
+```python
+import json
+
+with open('variants.json', 'r') as f:
+    json_data = json.load(f)
+
+windows = dict()
+for variant, val in json_data.items():
+    windows[variant] = '{}:{}-{}'.format(val['chromosome'], val['position']-1000, val['position']+1000)
+```
+But when you run the code, you get the following error:
+```python
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[1], line 3
+      1 windows = dict()
+      2 for variant, val in json_data.items():
+----> 3     windows[variant] = '{}:{}-{}'.format(val['chromosome'], val['position']-1000, val['position']+1000)
+
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+```
+- What might be the issue? What is the simplest way to fix it?
+- The `variant.json` file is in the same directory as this README file.
+
+
+## Question 14
+
+A colleague is writing a script to keep track of the total number of processed variants in a genomic dataset. They use a global variable to track the count, but the script doesn't produce the expected results. They ask for your help to debug the issue.
+
+```python
+# Global variable to track the total number of processed variants
+total_variants = 0
+
+def process_variant(variant_id):
+    # Increment the global variable for each processed variant
+    total_variants += 1
+    print(f"Processed variant: {variant_id}, Total so far: {total_variants}")
+
+# Process a few variants
+process_variant("rs123")
+process_variant("rs456")
+process_variant("rs789")
+
+print(f"Total variants processed: {total_variants}")
+```
+
+Error message
+```
+UnboundLocalError: local variable 'total_variants' referenced before assignment
+```
+
+- Why does the script raise an `UnboundLocalError`?
+- How would you advise the colleague to re-write their script?
+
