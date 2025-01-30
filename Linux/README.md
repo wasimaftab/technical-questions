@@ -6,6 +6,8 @@ How do you change the ownership of a file named `data.txt` to a user named `rese
 
 ## Question 2
 What command would you use to add a new group called `bioinformatics` and then assign a user named `alex` to this group?
+> sudo groupadd bioinformatics
+> sudo usermod -aG bioinformatics alex
 
 ## Question 3
 You need to transfer a file named `data.csv` from your local machine to a remote server located at `192.168.1.100`, placing it under the `/home/user/files/` directory. What command would you use and how?
