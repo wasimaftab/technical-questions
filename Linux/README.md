@@ -7,6 +7,7 @@ How do you change the ownership of a file named `data.txt` to a user named `rese
 ## Question 2
 What command would you use to add a new group called `bioinformatics` and then assign a user named `alex` to this group?
 > sudo groupadd bioinformatics
+
 > sudo usermod -aG bioinformatics alex
 
 ## Question 3
