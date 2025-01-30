@@ -48,14 +48,15 @@ You have several projects, and you decide to check the storage usage ***per proj
     └── project_D
 ```
 How can you get a concise report of the storage usage per project?
+> du -h --max-depth=2 /shared/user/john-doe/ | sort -hr
 
 ## Question 9
 You want to find all files in the `/home/research/` directory that were modified in the last 7 days. What command would you use?
-
+> find /home/research/ -type f -mtime -7 -exec ls -ltr {} +
 
 ## Question 10
 You are tasked with copying the contents of `/var/www/html/` from a local machine to a remote server at `backup.example.com:/var/backups/html/`. How would you ensure that all permissions, timestamps, and symbolic links are preserved, and verify the integrity of the files after copying?
-
+> rsync -avP --checksum /var/www/html/ backup.example.com:/var/backups/html/
 
 ## Question 11
 A user reports that they cannot connect to the server via SSH. You shared this information with your colleague and he/she mentions that they recently changed some SSH configurations.
@@ -68,8 +69,9 @@ A user reports that they cannot connect to the server via SSH. You shared this i
 A colleague requests help because they can't clone a repository from GitHub.
 
 - How would you check if GitHub is reachable over the network?
+- > ping www.github.com
 - How would you verify that port 443 (used for HTTPS) is open for connections to `github.com`?
-
+- > nc -zv github.com 443
 
 ## Question 13
 A colleague on an Ubuntu system reports the following error while trying to install a package:
@@ -79,12 +81,16 @@ Command 'yum' not found
 ```
 
 - What is the issue with their command?
+- > `yum` is not installed as default package manager in Ubuntu
 - What command should they use to install a package on Ubuntu?
-
+- > They should use `apt-get install` or `apt install`
 
 ## Question 14
 A colleague has installed a custom version of Python in `/opt/python3.9/bin`, but when they type `python3` in the terminal, it still uses the system's default version located in `/usr/bin/python3`.
 
 - Why is this happening?
+- > The /opt/python3.9/bin directory is not in PATH, or it is lower in priority than /usr/bin
 - How would you modify the environment to make `/opt/python3.9/bin/python3` the default python3 executable?
+- > The colleague needs to add the `/opt/python3.9/bin` to the path variable (in the beginning) in `.bashrc` and source it. Eg. 'export PATH=/opt/python3.9/bin:$PATH'
 - How can you verify which version of python3 is being used after the change?
+- > By executing `which python3`
