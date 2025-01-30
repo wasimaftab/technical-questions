@@ -12,9 +12,13 @@ What command would you use to add a new group called `bioinformatics` and then a
 
 ## Question 3
 You need to transfer a file named `data.csv` from your local machine to a remote server located at `192.168.1.100`, placing it under the `/home/user/files/` directory. What command would you use and how?
+> rsync -avP data.csv user@192.168.1.100:/home/user/files/
 
 ## Question 4
 You want to identify and delete all files named `temp.txt` in the `/tmp` directory and its subdirectories. What command would you run to accomplish this?
+> find /tmp -type f -name 'temp.txt' -delete
+
+> find /tmp -type f -name 'temp.txt' -exec rm {} +
 
 ## Question 5
 A file `script.sh` has `-rw-r--r--` permissions. You want to make it executable by the file's owner. What command would you run?
