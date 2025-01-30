@@ -22,6 +22,7 @@ You want to identify and delete all files named `temp.txt` in the `/tmp` directo
 
 ## Question 5
 A file `script.sh` has `-rw-r--r--` permissions. You want to make it executable by the file's owner. What command would you run?
+> chmod u+x script.sh
 
 ## Question 6
 Describe the purpose of the following command and what its output represents:
@@ -29,9 +30,11 @@ Describe the purpose of the following command and what its output represents:
 ```bash
 df -h
 ```
+> It reports the disk space usage in human-readable format, i.e. 100.4G, 23.9M
 
 ## Question 7
 You are tasked with archiving and compressing a directory `/project/data` into a file named `data_backup.tar.gz`. Write the command you would use.
+> tar -czvf /project/data_backup.tar.gz -C /project data
 
 ## Question 8
 You are notified by the IT team that you are taking up way too much storage space, and so you need to delete some unused data.  
@@ -45,7 +48,6 @@ You have several projects, and you decide to check the storage usage ***per proj
     └── project_D
 ```
 How can you get a concise report of the storage usage per project?
-
 
 ## Question 9
 You want to find all files in the `/home/research/` directory that were modified in the last 7 days. What command would you use?
