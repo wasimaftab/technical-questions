@@ -2,6 +2,7 @@
 
 ## Question 1
 How do you change the ownership of a file named `data.txt` to a user named `researcher` and a group named `research_team`?
+> chown researcher:research_team data.txt
 
 ## Question 2
 What command would you use to add a new group called `bioinformatics` and then assign a user named `alex` to this group?
