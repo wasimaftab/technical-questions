@@ -62,7 +62,9 @@ You are tasked with copying the contents of `/var/www/html/` from a local machin
 A user reports that they cannot connect to the server via SSH. You shared this information with your colleague and he/she mentions that they recently changed some SSH configurations.
 
 - Where would you find the main configuration file for the SSH service?
+- > /etc/ssh/sshd_config
 - After reverting your colleague's change, how do you restart the SSH service?
+- > sudo systemctl restart ssh
 
 
 ## Question 12
