@@ -8,6 +8,11 @@ items = (1, 2, 3)
 items[0] = 10
 print(items)
 ```
+> 1. tuple
+> 2. In python, tuples are immutable.
+> - Convert the tuple to a list.
+> - Modify the list.
+> - Convert it back to a tuple.
 
 ## Question 2
 What is the issue of this code?
@@ -16,6 +21,9 @@ records = {'A': 1, 'B': 2, 'C': 3}
 for key, value in records:
     print(key, value)
 ```
+> To iterate through dictionary key-value pairs, use the items() method.
+> 
+> for key, value in records.items(): print(key, value)
 
 ## Question 3
 Predict the output of the following code
@@ -24,6 +32,9 @@ numbers = [x**2 for x in range(1, 6)]
 print(len(numbers))
 print(numbers)
 ```
+> 5
+> 
+>[1, 4, 9, 16, 25]
 
 ## Question 4
 You need to get the BRCA1 gene coordinate from Ensembl.
@@ -73,6 +84,7 @@ With the import statement, it is common to use `*` to import all objects from a 
 from math import *
 ```
 Why might this be a bad idea?
+> This will import all the functions, objects, etc. defined in math library which might overwrite the functions with the same name from other modules or a user-defined function and it will be hard to keep track of that. So it is important to import specific functions to avoid variable space pollution.
 
 ## Question 7
 You find this directory
