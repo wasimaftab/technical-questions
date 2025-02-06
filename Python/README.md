@@ -59,6 +59,15 @@ class EnsemblClient:
 ```
 
 How can you use this class to get the BRCA1 gene start and end coordinates?
+```
+# Create an instance of the class
+client = EnsemblClient()
+
+# Call the instance with "BRCA1"
+brca1_start, brca1_end = client("BRCA1")  
+
+print(f"BRCA1 start: {brca1_start}, end: {brca1_end}")    
+```
 
 
 ## Question 5
@@ -76,6 +85,11 @@ Below is the directory structure from your current working directory (CWD).
 After initiating a Python3 interpreter from your CWD:
 1. How do you import `module.py`?
 2. You want to import a `helper` object inside `module2.py`. How do you import it?
+
+```
+1. import module as mdl
+2. from package.module2 import helper_obj
+```
 
 
 ## Question 6
@@ -107,6 +121,11 @@ setup(
 1. What is the purpose of `setup.py`?
 2. After understanding what the purpose of `setup.py` is, do you notice issue with the directory structure?
 3. Is there anything else you would change to follow best practices?
+```
+1. Defines the package for installation (pip install .).
+2. Missing xyz/__init__.py, so xyz/ isn’t a valid package.
+3. Add install_requires, README.md, MANIFEST.in.
+```
 
 
 ## Question 8
@@ -116,6 +135,18 @@ ERROR: Could not find a version that satisfies the requirement numpy>=1.21.0 (fr
 ERROR: No matching distribution found for numpy>=1.21.0
 ```
 Describe the issue, and explain how you might resolve the issue.
+```
+Issue:
+The error occurs because example_package requires numpy>=1.21.0,
+but pip cannot find this version in the available package index. This is likely due to:
+
+1. An outdated pip, preventing it from fetching the latest versions.
+    Solution: `pip install --upgrade` and then `pip setuptools wheel`
+2. An incompatible Python version (e.g., Python 3.6 instead of 3.7+).
+    Solution: manually install older numpy, e.g., `pip install numpy==1.20.3` and then `pip install example_package`
+3. A virtual environment or system dependency conflict.
+    Solution: Use a clean virtual environment, it helps to isolate dependencies and ensure that pip can fetch the latest versions.
+```
 
 ## Question 9
 You try to install a python package by running `pip install example_package` and you get the following error:
