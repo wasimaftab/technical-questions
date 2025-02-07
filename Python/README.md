@@ -172,6 +172,9 @@ ERROR: Could not build wheels for example_package, which is required to install 
 ```
 
 Describe the issue, and explain how you might resolve the issue.
+```
+The error arises due to a missing constant (EXAMPLE_CONSTANT) while compiling example_package/module.c which might point to missing header files, and dependencies. So, I would try installing the dependencies such as build-essential, python3-dev etc. and then attempt the installation
+```
 
 ## Question 10
 You are approached by a colleague who says:
