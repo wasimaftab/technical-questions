@@ -9,8 +9,8 @@ What is the purpose of the following Jupyter Notebook commands? Provide examples
 4. Can you name any other similar examples?
 ```
 1. `%matplotlib inline` makes sure matplotlib plots are displayed inside the notebook.
-2. `%timeit` Measures the execution time of a single line of code.
-3. `%%writefile` Writes the entire cell contents to a file, useful for saving scripts or text files directly from a notebook.
+2. `%timeit` measures the execution time of a single line of code.
+3. `%%writefile` writes the entire cell contents to a file, useful for saving scripts or text files directly from a notebook.
 
 Other Jupyter Notebook magic commands are as follows:
 i) `%matplotlib notebook` This command enables interactive plots in Jupyter Notebook, instead of static images.
@@ -27,9 +27,25 @@ jupyter: command not found
 
 Describe the issue and suggest a potential solution.
 
+```
+There are couple of scnerios to consider:
+1. Maybe Jupyter is not in the $PATH. I'm a Linux user so would try this command `which jupyter` to check if Jupyter is in my system's path.
+2. It could also be that Jupyter is installed but in a different virtual env. So, I need to make sure of that.
+```
+
 ## Question 3
 - What is the purpose of a Jupyter kernel?
 - Explain how you can install a new kernel and the location of the kernel configuration file.
+```
+A Jupyter kernel is a runtime environment that executes code inside a Jupyter Notebook.
+It allows you to run different programming languages (such as Python, R, Julia, etc.) inside Jupyter.
+
+To install a new Jupyter kernel run the following command:
+python -m ipykernel install --user --name=my_env --display-name "Python (my_env)"
+
+After installation, I can select it in Jupyter Notebook under:
+Kernel -> Change Kernel -> Python (my_env)
+```
 
 ## Question 4
 You are working in a Jupyter Notebook and want to execute a bash command directly within a cell. How can you do this?
