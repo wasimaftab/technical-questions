@@ -7,6 +7,16 @@ What is the purpose of the following Jupyter Notebook commands? Provide examples
 2. `%timeit`
 3. `%%writefile`
 4. Can you name any other similar examples?
+```
+1. `%matplotlib inline` makes sure matplotlib plots are displayed inside the notebook.
+2. `%timeit` Measures the execution time of a single line of code.
+3. `%%writefile` Writes the entire cell contents to a file, useful for saving scripts or text files directly from a notebook.
+
+Other Jupyter Notebook magic commands are as follows:
+i) `%matplotlib notebook` This command enables interactive plots in Jupyter Notebook, instead of static images.
+ii) `%%bash` This command facilitates running an entire cell as Bash commands.
+iii) `%load` This command enables loading an external Python script into the Notebook.
+```
 
 ## Question 2
 You have installed Jupyter Notebook on your local machine. When you try to start it by running jupyter notebook, you get the following error:
