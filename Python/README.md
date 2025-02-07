@@ -173,7 +173,8 @@ ERROR: Could not build wheels for example_package, which is required to install 
 
 Describe the issue, and explain how you might resolve the issue.
 ```
-The error arises due to a missing constant (EXAMPLE_CONSTANT) while compiling example_package/module.c which might point to missing header files, and dependencies. So, I would try installing the dependencies such as build-essential, python3-dev etc. and then attempt the installation
+The error arises due to a missing constant (EXAMPLE_CONSTANT) while compiling example_package/module.c which might point to missing header files, and dependencies.
+So, I would try installing the dependencies such as build-essential, python3-dev etc. and then attempt the installation
 ```
 
 ## Question 10
@@ -196,6 +197,10 @@ if (n := len(data)) > 3:
 SyntaxError: invalid syntax
 ```
 What might be the cause of the issue? Why would this script run fine on the colleague's computer but not on the institute server?
+```
+:= is an operator introduced in Python 3.8, which allows the assignment of variables within expressions. So, the like scenario is that colleague's pc has Python version >=3.8,
+and the institute server's Python version is <3.8 installed.
+```
 
 
 ## Question 11
