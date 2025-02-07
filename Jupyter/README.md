@@ -38,7 +38,7 @@ There are couple of scnerios to consider:
 - Explain how you can install a new kernel and the location of the kernel configuration file.
 ```
 A Jupyter kernel is a runtime environment that executes code inside a Jupyter Notebook.
-It allows you to run different programming languages (such as Python, R, Julia, etc.) inside Jupyter.
+It allows users to run different programming languages (such as Python, R, Julia, etc.) inside Jupyter.
 
 To install a new Jupyter kernel run the following command:
 python -m ipykernel install --user --name=my_env --display-name "Python (my_env)"
