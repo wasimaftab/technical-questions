@@ -49,6 +49,9 @@ Kernel -> Change Kernel -> Python (my_env)
 
 ## Question 4
 You are working in a Jupyter Notebook and want to execute a bash command directly within a cell. How can you do this?
+```
+I will use the built-in magic command %%bash on top of the cell or I could append banf operator (!) before the shell command
+```
 
 ## Question 5
 A colleague asks how to share a Jupyter Notebook as a PDF file to share with a collaborator.
